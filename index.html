@@ -1,442 +1,500 @@
 <!DOCTYPE html>
+
 <html>
 
 <head>
 
-    <title>Tyler's Exam Schedule</title>
+```
+<title>Tyler's Final Exam Schedule</title>
 
-    <style>
+<style>
+
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        background-color: #f2f2f2;
+        color: #111;
+        text-align: center;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 30px;
+    }
+
+    h1 {
+        color: #111;
+        font-size: 40px;
+        margin-bottom: 10px;
+    }
+
+    p {
+        font-size: 20px;
+        color: #444;
+    }
+
+    h2 {
+        color: #111;
+    }
+
+    /* NEXT EXAM BOX */
+
+    .next-test {
+        background-color: #111;
+        color: white;
+        width: 80%;
+        max-width: 650px;
+        margin: 30px auto;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .next-test h2 {
+        margin-top: 0;
+        color: white;
+    }
+
+    #next-exam {
+        font-size: 30px;
+        font-weight: bold;
+        color: white;
+    }
+
+    #next-date {
+        font-size: 18px;
+        margin-top: 10px;
+        color: #ddd;
+        line-height: 1.6;
+    }
+
+    #countdown {
+        font-size: 30px;
+        font-weight: bold;
+        margin-top: 18px;
+        color: white;
+    }
+
+    .in-progress {
+        color: #fff !important;
+    }
+
+    /* SCHEDULE */
+
+    .schedule {
+        background-color: white;
+        width: 90%;
+        max-width: 850px;
+        margin: 30px auto;
+        padding: 30px;
+        border-radius: 12px;
+        text-align: left;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+    }
+
+    .week {
+        margin-bottom: 40px;
+    }
+
+    .week-title {
+        background-color: #111;
+        color: white;
+        padding: 13px;
+        border-radius: 8px;
+        text-align: center;
+        font-size: 19px;
+    }
+
+    ul {
+        padding-left: 25px;
+    }
+
+    li {
+        margin: 16px 0;
+        font-size: 17px;
+        line-height: 1.5;
+    }
+
+    /* WRITING TIME */
+
+    .duration {
+        color: #555;
+        font-size: 15px;
+        font-weight: bold;
+        white-space: nowrap;
+    }
+
+    /* IN PROGRESS */
+
+    .status {
+        color: #111;
+        font-weight: bold;
+        margin-left: 8px;
+        white-space: nowrap;
+    }
+
+    /* COMPLETED */
+
+    .completed {
+        text-decoration: line-through;
+        text-decoration-color: #111;
+        text-decoration-thickness: 3px;
+        opacity: 0.45;
+    }
+
+    /* FOOTER */
+
+    footer {
+        margin-top: 35px;
+        font-size: 14px;
+        color: #555;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 600px) {
 
         body {
-            background-color: lightblue;
-            text-align: center;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 30px;
+            padding: 15px;
         }
 
         h1 {
-            color: black;
-            font-size: 40px;
-        }
-
-        p {
-            font-size: 20px;
-        }
-
-        h2 {
-            color: darkblue;
+            font-size: 32px;
         }
 
         .next-test {
-            background-color: white;
-            width: 80%;
-            max-width: 600px;
-            margin: 30px auto;
-            padding: 25px;
-            border-radius: 15px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        }
-
-        .next-test h2 {
-            margin-top: 0;
-        }
-
-        #next-exam {
-            font-size: 28px;
-            font-weight: bold;
-            color: darkblue;
-        }
-
-        #next-date {
-            font-size: 18px;
-            margin-top: 8px;
-        }
-
-        #countdown {
-            font-size: 30px;
-            font-weight: bold;
-            margin-top: 15px;
-            color: black;
-        }
-
-        .in-progress {
-            color: green !important;
-            font-weight: bold;
-        }
-
-        .duration {
-            color: darkblue;
-            font-size: 15px;
-            font-weight: bold;
-        }
-
-        .status {
-            color: green;
-            font-weight: bold;
-            margin-left: 8px;
+            width: 100%;
+            padding: 25px 15px;
         }
 
         .schedule {
-            background-color: white;
-            width: 90%;
-            max-width: 800px;
-            margin: 30px auto;
-            padding: 25px;
-            border-radius: 15px;
-            text-align: left;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            padding: 20px;
         }
 
-        .week {
-            margin-bottom: 35px;
+        #next-exam {
+            font-size: 25px;
         }
 
-        .week-title {
-            background-color: darkblue;
-            color: white;
-            padding: 12px;
-            border-radius: 10px;
-            text-align: center;
+        #countdown {
+            font-size: 25px;
         }
 
         li {
-            margin: 12px 0;
-            font-size: 17px;
+            font-size: 16px;
         }
 
-        .completed {
-            text-decoration: line-through;
-            text-decoration-color: red;
-            text-decoration-thickness: 3px;
-            opacity: 0.6;
-        }
+    }
 
-        footer {
-            margin-top: 30px;
-            font-size: 14px;
-        }
-
-    </style>
+</style>
+```
 
 </head>
 
-
 <body>
 
-    <h1>Wuss Guud Fam 👋</h1>
+```
+<h1>Wuss Guud Fam 👋</h1>
 
-    <p>Welcome to Tyler's exam schedule.</p>
+<p>Welcome to Tyler's final exam schedule.</p>
 
 
-    <!-- NEXT EXAM -->
+<!-- NEXT EXAM -->
 
-    <div class="next-test">
+<div class="next-test">
 
-        <h2 id="next-title">⏰ Next Exam</h2>
+    <h2 id="next-title">⏰ Next Exam</h2>
 
-        <div id="next-exam">
-            Loading...
-        </div>
+    <div id="next-exam">
+        Loading...
+    </div>
 
-        <div id="next-date">
-        </div>
+    <div id="next-date">
+        Loading...
+    </div>
 
-        <div id="countdown">
-            Loading countdown...
-        </div>
+    <div id="countdown">
+        Loading countdown...
+    </div>
+
+</div>
+
+
+<!-- EXAM SCHEDULE -->
+
+<div class="schedule">
+
+    <h2>📚 Final Exam Schedule</h2>
+
+
+    <!-- WEEK 1 -->
+
+    <div class="week">
+
+        <h3 class="week-title">
+            Week 1 — 15 to 16 October
+        </h3>
+
+        <ul>
+
+            <li data-exam="2026-10-15T09:00:00" data-duration="3">
+                English HL Paper 3 -
+                <time datetime="2026-10-15T09:00">
+                    15 Oct 2026 at 9am
+                </time>
+                <span class="duration">• 3 hours</span>
+            </li>
+
+            <li data-exam="2026-10-16T09:00:00" data-duration="3">
+                Physical Sciences Paper 1 -
+                <time datetime="2026-10-16T09:00">
+                    16 Oct 2026 at 9am
+                </time>
+                <span class="duration">• 3 hours</span>
+            </li>
+
+        </ul>
 
     </div>
 
 
-    <!-- EXAM SCHEDULE -->
+    <!-- WEEK 2 -->
 
-    <div class="schedule">
+    <div class="week">
 
-        <h2>📚 My Exam Schedule</h2>
+        <h3 class="week-title">
+            Week 2 — 19 October
+        </h3>
 
+        <ul>
 
-        <!-- WEEK 1 -->
+            <li data-exam="2026-10-19T09:00:00" data-duration="2.5">
+                Afrikaans FAL Paper 3 -
+                <time datetime="2026-10-19T09:00">
+                    19 Oct 2026 at 9am
+                </time>
+                <span class="duration">• 2.5 hours</span>
+            </li>
 
-        <div class="week">
+            <li data-exam="2026-10-19T14:00:00" data-duration="3">
+                Physical Sciences Paper 2 -
+                <time datetime="2026-10-19T14:00">
+                    19 Oct 2026 at 2pm
+                </time>
+                <span class="duration">• 3 hours</span>
+            </li>
 
-            <h3 class="week-title">
-                Week 1 — 18 to 21 August
-            </h3>
-
-            <ul>
-
-                <li data-exam="2026-08-18T09:00:00">
-                    Afrikaans Paper 3 -
-                    <time datetime="2026-08-18T09:00">
-                        18 Aug 2026 at 9am
-                    </time>
-                    <span class="duration">• 3 hours</span>
-                </li>
-
-                <li data-exam="2026-08-20T09:00:00">
-                    English Paper 3 -
-                    <time datetime="2026-08-20T09:00">
-                        20 Aug 2026 at 9am
-                    </time>
-                    <span class="duration">• 3 hours</span>
-                </li>
-
-                <li data-exam="2026-08-21T09:00:00">
-                    Physical Sciences Paper 1 -
-                    <time datetime="2026-08-21T09:00">
-                        21 Aug 2026 at 9am
-                    </time>
-                    <span class="duration">• 3 hours</span>
-                </li>
-
-            </ul>
-
-        </div>
-
-
-        <!-- WEEK 2 -->
-
-        <div class="week">
-
-            <h3 class="week-title">
-                Week 2 — 24 to 28 August
-            </h3>
-
-            <ul>
-
-                <li data-exam="2026-08-24T09:00:00">
-                    Physical Sciences Paper 2 -
-                    <time datetime="2026-08-24T09:00">
-                        24 Aug 2026 at 9am
-                    </time>
-                    <span class="duration">• 3 hours</span>
-                </li>
-
-                <li data-exam="2026-08-24T14:00:00">
-                    History Paper 1 -
-                    <time datetime="2026-08-24T14:00">
-                        24 Aug 2026 at 2pm
-                    </time>
-                    <span class="duration">• 3 hours</span>
-                </li>
-
-                <li data-exam="2026-08-25T14:00:00">
-                    English Paper 1 -
-                    <time datetime="2026-08-25T14:00">
-                        25 Aug 2026 at 2pm
-                    </time>
-                    <span class="duration">• 3 hours</span>
-                </li>
-
-                <li data-exam="2026-08-27T09:00:00">
-                    Life Orientation -
-                    <time datetime="2026-08-27T09:00">
-                        27 Aug 2026 at 9am
-                    </time>
-                    <span class="duration">• 3 hours</span>
-                </li>
-
-                <li data-exam="2026-08-28T09:00:00">
-                    Mathematics Paper 1 -
-                    <time datetime="2026-08-28T09:00">
-                        28 Aug 2026 at 9am
-                    </time>
-                    <span class="duration">• 3 hours</span>
-                </li>
-
-            </ul>
-
-        </div>
-
-
-        <!-- WEEK 3 -->
-
-        <div class="week">
-
-            <h3 class="week-title">
-                Week 3 — 31 August to 4 September
-            </h3>
-
-            <ul>
-
-                <li data-exam="2026-08-31T09:00:00">
-                    Mathematics Paper 2 -
-                    <time datetime="2026-08-31T09:00">
-                        31 Aug 2026 at 9am
-                    </time>
-                    <span class="duration">• 3 hours</span>
-                </li>
-
-                <li data-exam="2026-09-01T09:00:00">
-                    English Paper 2 -
-                    <time datetime="2026-09-01T09:00">
-                        01 Sep 2026 at 9am
-                    </time>
-                    <span class="duration">• 3 hours</span>
-                </li>
-
-                <li data-exam="2026-09-02T14:00:00">
-                    History Paper 2 -
-                    <time datetime="2026-09-02T14:00">
-                        02 Sep 2026 at 2pm
-                    </time>
-                    <span class="duration">• 3 hours</span>
-                </li>
-
-                <li data-exam="2026-09-03T09:00:00">
-                    Afrikaans Paper 1 -
-                    <time datetime="2026-09-03T09:00">
-                        03 Sep 2026 at 9am
-                    </time>
-                    <span class="duration">• 3 hours</span>
-                </li>
-
-                <li data-exam="2026-09-04T09:00:00">
-                    Life Sciences Paper 1 -
-                    <time datetime="2026-09-04T09:00">
-                        04 Sep 2026 at 9am
-                    </time>
-                    <span class="duration">• 3 hours</span>
-                </li>
-
-            </ul>
-
-        </div>
-
-
-        <!-- WEEK 4 -->
-
-        <div class="week">
-
-            <h3 class="week-title">
-                Week 4 — 7 to 8 September
-            </h3>
-
-            <ul>
-
-                <li data-exam="2026-09-07T09:00:00">
-                    Life Sciences Paper 2 -
-                    <time datetime="2026-09-07T09:00">
-                        07 Sep 2026 at 9am
-                    </time>
-                    <span class="duration">• 3 hours</span>
-                </li>
-
-                <li data-exam="2026-09-08T09:00:00">
-                    Afrikaans Paper 2 -
-                    <time datetime="2026-09-08T09:00">
-                        08 Sep 2026 at 9am
-                    </time>
-                    <span class="duration">• 3 hours</span>
-                </li>
-
-            </ul>
-
-        </div>
+        </ul>
 
     </div>
 
 
-    <footer>
-        Made by Tyler 💻
-    </footer>
+    <!-- WEEK 3 -->
 
+    <div class="week">
+
+        <h3 class="week-title">
+            Week 3 — 23 to 29 October
+        </h3>
+
+        <ul>
+
+            <li data-exam="2026-10-23T09:00:00" data-duration="3">
+                Mathematics Paper 1 -
+                <time datetime="2026-10-23T09:00">
+                    23 Oct 2026 at 9am
+                </time>
+                <span class="duration">• 3 hours</span>
+            </li>
+
+            <li data-exam="2026-10-26T09:00:00" data-duration="3">
+                Mathematics Paper 2 -
+                <time datetime="2026-10-26T09:00">
+                    26 Oct 2026 at 9am
+                </time>
+                <span class="duration">• 3 hours</span>
+            </li>
+
+            <li data-exam="2026-10-29T14:00:00" data-duration="2.5">
+                English HL Paper 2 -
+                <time datetime="2026-10-29T14:00">
+                    29 Oct 2026 at 2pm
+                </time>
+                <span class="duration">• 2.5 hours</span>
+            </li>
+
+        </ul>
+
+    </div>
+
+
+    <!-- WEEK 4 -->
+
+    <div class="week">
+
+        <h3 class="week-title">
+            Week 4 — 6 to 13 November
+        </h3>
+
+        <ul>
+
+            <li data-exam="2026-11-06T09:00:00" data-duration="2.5">
+                Afrikaans FAL Paper 2 -
+                <time datetime="2026-11-06T09:00">
+                    6 Nov 2026 at 9am
+                </time>
+                <span class="duration">• 2.5 hours</span>
+            </li>
+
+            <li data-exam="2026-11-12T09:00:00" data-duration="3">
+                History Paper 1 -
+                <time datetime="2026-11-12T09:00">
+                    12 Nov 2026 at 9am
+                </time>
+                <span class="duration">• 3 hours</span>
+            </li>
+
+            <li data-exam="2026-11-12T14:00:00" data-duration="2">
+                English HL Paper 1 -
+                <time datetime="2026-11-12T14:00">
+                    12 Nov 2026 at 2pm
+                </time>
+                <span class="duration">• 2 hours</span>
+            </li>
+
+            <li data-exam="2026-11-13T09:00:00" data-duration="2.5">
+                Life Sciences Paper 1 -
+                <time datetime="2026-11-13T09:00">
+                    13 Nov 2026 at 9am
+                </time>
+                <span class="duration">• 2.5 hours</span>
+            </li>
+
+        </ul>
+
+    </div>
+
+
+    <!-- WEEK 5 -->
+
+    <div class="week">
+
+        <h3 class="week-title">
+            Week 5 — 16 to 20 November
+        </h3>
+
+        <ul>
+
+            <li data-exam="2026-11-16T09:00:00" data-duration="2.5">
+                Life Sciences Paper 2 -
+                <time datetime="2026-11-16T09:00">
+                    16 Nov 2026 at 9am
+                </time>
+                <span class="duration">• 2.5 hours</span>
+            </li>
+
+            <li data-exam="2026-11-20T09:00:00" data-duration="3">
+                History Paper 2 -
+                <time datetime="2026-11-20T09:00">
+                    20 Nov 2026 at 9am
+                </time>
+                <span class="duration">• 3 hours</span>
+            </li>
+
+        </ul>
+
+    </div>
+
+</div>
+
+
+<footer>
+    Made by Tyler 💻
+</footer>
+```
 
 <script>
 
-    // All of the exams
-    // Every exam has a 3-hour writing time
+    // All final exams
+    // Duration is stored in hours
 
     const exams = [
 
         {
-            name: "Afrikaans Paper 3",
-            date: "2026-08-18T09:00:00",
-            duration: 3
-        },
-
-        {
-            name: "English Paper 3",
-            date: "2026-08-20T09:00:00",
+            name: "English HL Paper 3",
+            date: "2026-10-15T09:00:00",
             duration: 3
         },
 
         {
             name: "Physical Sciences Paper 1",
-            date: "2026-08-21T09:00:00",
+            date: "2026-10-16T09:00:00",
             duration: 3
+        },
+
+        {
+            name: "Afrikaans FAL Paper 3",
+            date: "2026-10-19T09:00:00",
+            duration: 2.5
         },
 
         {
             name: "Physical Sciences Paper 2",
-            date: "2026-08-24T09:00:00",
-            duration: 3
-        },
-
-        {
-            name: "History Paper 1",
-            date: "2026-08-24T14:00:00",
-            duration: 3
-        },
-
-        {
-            name: "English Paper 1",
-            date: "2026-08-25T14:00:00",
-            duration: 3
-        },
-
-        {
-            name: "Life Orientation",
-            date: "2026-08-27T09:00:00",
+            date: "2026-10-19T14:00:00",
             duration: 3
         },
 
         {
             name: "Mathematics Paper 1",
-            date: "2026-08-28T09:00:00",
+            date: "2026-10-23T09:00:00",
             duration: 3
         },
 
         {
             name: "Mathematics Paper 2",
-            date: "2026-08-31T09:00:00",
+            date: "2026-10-26T09:00:00",
             duration: 3
         },
 
         {
-            name: "English Paper 2",
-            date: "2026-09-01T09:00:00",
+            name: "English HL Paper 2",
+            date: "2026-10-29T14:00:00",
+            duration: 2.5
+        },
+
+        {
+            name: "Afrikaans FAL Paper 2",
+            date: "2026-11-06T09:00:00",
+            duration: 2.5
+        },
+
+        {
+            name: "History Paper 1",
+            date: "2026-11-12T09:00:00",
             duration: 3
         },
 
         {
-            name: "History Paper 2",
-            date: "2026-09-02T14:00:00",
-            duration: 3
-        },
-
-        {
-            name: "Afrikaans Paper 1",
-            date: "2026-09-03T09:00:00",
-            duration: 3
+            name: "English HL Paper 1",
+            date: "2026-11-12T14:00:00",
+            duration: 2
         },
 
         {
             name: "Life Sciences Paper 1",
-            date: "2026-09-04T09:00:00",
-            duration: 3
+            date: "2026-11-13T09:00:00",
+            duration: 2.5
         },
 
         {
             name: "Life Sciences Paper 2",
-            date: "2026-09-07T09:00:00",
-            duration: 3
+            date: "2026-11-16T09:00:00",
+            duration: 2.5
         },
 
         {
-            name: "Afrikaans Paper 2",
-            date: "2026-09-08T09:00:00",
+            name: "History Paper 2",
+            date: "2026-11-20T09:00:00",
             duration: 3
         }
 
@@ -448,7 +506,7 @@
         const now = new Date().getTime();
 
 
-        // Mark exams as completed or in progress
+        // Mark exams as upcoming, in progress, or completed
 
         const examList = document.querySelectorAll("li[data-exam]");
 
@@ -458,17 +516,22 @@
                 examElement.getAttribute("data-exam")
             ).getTime();
 
-            const examEndTime = examTime + (3 * 60 * 60 * 1000);
+            const duration =
+                parseFloat(examElement.getAttribute("data-duration"));
+
+            const examEndTime =
+                examTime + (duration * 60 * 60 * 1000);
 
 
             // Find existing status
 
-            let status = examElement.querySelector(".status");
+            let status =
+                examElement.querySelector(".status");
 
+
+            // EXAM IS CURRENTLY IN PROGRESS
 
             if (now >= examTime && now < examEndTime) {
-
-                // Exam is currently happening
 
                 examElement.classList.remove("completed");
 
@@ -476,15 +539,19 @@
 
                     status = document.createElement("span");
                     status.className = "status";
+
                     examElement.appendChild(status);
 
                 }
 
-                status.innerHTML = "🟢 IN PROGRESS";
+                status.innerHTML = "◉ IN PROGRESS";
 
-            } else if (now >= examEndTime) {
+            }
 
-                // Exam has finished
+
+            // EXAM HAS FINISHED
+
+            else if (now >= examEndTime) {
 
                 examElement.classList.add("completed");
 
@@ -492,9 +559,12 @@
                     status.remove();
                 }
 
-            } else {
+            }
 
-                // Exam has not started yet
+
+            // EXAM HAS NOT STARTED
+
+            else {
 
                 examElement.classList.remove("completed");
 
@@ -511,14 +581,21 @@
 
         let currentExam = null;
 
+
         for (let exam of exams) {
 
-            const examTime = new Date(exam.date).getTime();
+            const examTime =
+                new Date(exam.date).getTime();
 
             const examEndTime =
-                examTime + (exam.duration * 60 * 60 * 1000);
+                examTime +
+                (exam.duration * 60 * 60 * 1000);
 
-            if (now >= examTime && now < examEndTime) {
+
+            if (
+                now >= examTime &&
+                now < examEndTime
+            ) {
 
                 currentExam = exam;
 
@@ -529,7 +606,7 @@
         }
 
 
-        // If an exam is currently in progress
+        // SHOW CURRENT EXAM
 
         if (currentExam !== null) {
 
@@ -537,9 +614,11 @@
                 new Date(currentExam.date).getTime();
 
             const examEndTime =
-                examTime + (currentExam.duration * 60 * 60 * 1000);
+                examTime +
+                (currentExam.duration * 60 * 60 * 1000);
 
-            const difference = examEndTime - now;
+            const difference =
+                examEndTime - now;
 
 
             const hours = Math.floor(
@@ -558,14 +637,17 @@
 
 
             document.getElementById("next-title").innerHTML =
-                "🟢 Exam In Progress";
+                "◉ Exam In Progress";
+
 
             document.getElementById("next-exam").innerHTML =
                 currentExam.name;
 
+
             document.getElementById("next-exam").classList.add(
                 "in-progress"
             );
+
 
             document.getElementById("next-date").innerHTML =
                 "Started at " +
@@ -578,13 +660,17 @@
                         hour: "numeric",
                         minute: "2-digit"
                     }
-                );
+                ) +
+                "<br>Writing time: " +
+                formatDuration(currentExam.duration);
+
 
             document.getElementById("countdown").innerHTML =
                 "⏳ " +
                 hours + "h " +
                 minutes + "m " +
                 seconds + "s remaining";
+
 
             return;
 
@@ -595,9 +681,12 @@
 
         let nextExam = null;
 
+
         for (let exam of exams) {
 
-            const examTime = new Date(exam.date).getTime();
+            const examTime =
+                new Date(exam.date).getTime();
+
 
             if (examTime > now) {
 
@@ -610,25 +699,29 @@
         }
 
 
-        // If there are no more exams
+        // ALL EXAMS FINISHED
 
         if (nextExam === null) {
 
             document.getElementById("next-title").innerHTML =
-                "🎉 Exams Finished";
+                "✓ Finals Complete";
 
             document.getElementById("next-exam").innerHTML =
                 "All exams are finished!";
+
 
             document.getElementById("next-exam").classList.remove(
                 "in-progress"
             );
 
+
             document.getElementById("next-date").innerHTML =
                 "";
 
+
             document.getElementById("countdown").innerHTML =
                 "Well done!";
+
 
             return;
 
@@ -647,7 +740,8 @@
         const examTime =
             new Date(nextExam.date).getTime();
 
-        const difference = examTime - now;
+        const difference =
+            examTime - now;
 
 
         const days = Math.floor(
@@ -675,6 +769,7 @@
         document.getElementById("next-title").innerHTML =
             "⏰ Next Exam";
 
+
         document.getElementById("next-exam").innerHTML =
             nextExam.name;
 
@@ -691,7 +786,8 @@
                     minute: "2-digit"
                 }
             ) +
-            "<br>⏱️ Writing time: 3 hours";
+            "<br>Writing time: " +
+            formatDuration(nextExam.duration);
 
 
         // Display countdown
@@ -701,6 +797,27 @@
             hours + "h " +
             minutes + "m " +
             seconds + "s";
+
+    }
+
+
+    // Convert decimal hours into readable text
+
+    function formatDuration(hours) {
+
+        if (hours === 2.5) {
+            return "2.5 hours";
+        }
+
+        if (hours === 2) {
+            return "2 hours";
+        }
+
+        if (hours === 3) {
+            return "3 hours";
+        }
+
+        return hours + " hours";
 
     }
 
@@ -715,7 +832,6 @@
     setInterval(updateCountdown, 1000);
 
 </script>
-
 
 </body>
 
