@@ -1,417 +1,437 @@
 <!DOCTYPE html>
-
 <html>
 
 <head>
 
-```
-<title>Tyler's Final Exam Schedule</title>
+    <title>Tyler's Final Exam Schedule</title>
 
-<style>
+    <style>
 
-    * {
-        box-sizing: border-box;
-    }
-
-    body {
-        background-color: #f2f2f2;
-        color: #111;
-        text-align: center;
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 30px;
-    }
-
-    h1 {
-        color: #111;
-        font-size: 40px;
-        margin-bottom: 10px;
-    }
-
-    p {
-        font-size: 20px;
-        color: #444;
-    }
-
-    h2 {
-        color: #111;
-    }
-
-    /* NEXT EXAM BOX */
-
-    .next-test {
-        background-color: #111;
-        color: white;
-        width: 80%;
-        max-width: 650px;
-        margin: 30px auto;
-        padding: 30px;
-        border-radius: 12px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    }
-
-    .next-test h2 {
-        margin-top: 0;
-        color: white;
-    }
-
-    #next-exam {
-        font-size: 30px;
-        font-weight: bold;
-        color: white;
-    }
-
-    #next-date {
-        font-size: 18px;
-        margin-top: 10px;
-        color: #ddd;
-        line-height: 1.6;
-    }
-
-    #countdown {
-        font-size: 30px;
-        font-weight: bold;
-        margin-top: 18px;
-        color: white;
-    }
-
-    .in-progress {
-        color: #fff !important;
-    }
-
-    /* SCHEDULE */
-
-    .schedule {
-        background-color: white;
-        width: 90%;
-        max-width: 850px;
-        margin: 30px auto;
-        padding: 30px;
-        border-radius: 12px;
-        text-align: left;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
-    }
-
-    .week {
-        margin-bottom: 40px;
-    }
-
-    .week-title {
-        background-color: #111;
-        color: white;
-        padding: 13px;
-        border-radius: 8px;
-        text-align: center;
-        font-size: 19px;
-    }
-
-    ul {
-        padding-left: 25px;
-    }
-
-    li {
-        margin: 16px 0;
-        font-size: 17px;
-        line-height: 1.5;
-    }
-
-    /* WRITING TIME */
-
-    .duration {
-        color: #555;
-        font-size: 15px;
-        font-weight: bold;
-        white-space: nowrap;
-    }
-
-    /* IN PROGRESS */
-
-    .status {
-        color: #111;
-        font-weight: bold;
-        margin-left: 8px;
-        white-space: nowrap;
-    }
-
-    /* COMPLETED */
-
-    .completed {
-        text-decoration: line-through;
-        text-decoration-color: #111;
-        text-decoration-thickness: 3px;
-        opacity: 0.45;
-    }
-
-    /* FOOTER */
-
-    footer {
-        margin-top: 35px;
-        font-size: 14px;
-        color: #555;
-    }
-
-    /* MOBILE */
-
-    @media (max-width: 600px) {
+        * {
+            box-sizing: border-box;
+        }
 
         body {
-            padding: 15px;
+            background-color: #f2f2f2;
+            color: #111;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 30px;
         }
 
         h1 {
-            font-size: 32px;
+            color: #111;
+            font-size: 40px;
+            margin-bottom: 10px;
         }
+
+        p {
+            font-size: 20px;
+            color: #444;
+        }
+
+        h2 {
+            color: #111;
+        }
+
+        /* NEXT EXAM BOX */
 
         .next-test {
-            width: 100%;
-            padding: 25px 15px;
+            background-color: #111;
+            color: white;
+            width: 80%;
+            max-width: 650px;
+            margin: 30px auto;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
 
-        .schedule {
-            width: 100%;
-            padding: 20px;
+        .next-test h2 {
+            margin-top: 0;
+            color: white;
         }
 
         #next-exam {
-            font-size: 25px;
+            font-size: 30px;
+            font-weight: bold;
+            color: white;
+        }
+
+        #next-date {
+            font-size: 18px;
+            margin-top: 10px;
+            color: #ddd;
+            line-height: 1.6;
         }
 
         #countdown {
-            font-size: 25px;
+            font-size: 30px;
+            font-weight: bold;
+            margin-top: 18px;
+            color: white;
+        }
+
+        .in-progress {
+            color: #fff !important;
+        }
+
+        /* SCHEDULE */
+
+        .schedule {
+            background-color: white;
+            width: 90%;
+            max-width: 850px;
+            margin: 30px auto;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: left;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+        }
+
+        .week {
+            margin-bottom: 40px;
+        }
+
+        .week-title {
+            background-color: #111;
+            color: white;
+            padding: 13px;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 19px;
+        }
+
+        ul {
+            padding-left: 25px;
         }
 
         li {
-            font-size: 16px;
+            margin: 16px 0;
+            font-size: 17px;
+            line-height: 1.5;
         }
 
-    }
+        /* WRITING TIME */
 
-</style>
-```
+        .duration {
+            color: #555;
+            font-size: 15px;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        /* IN PROGRESS */
+
+        .status {
+            color: #111;
+            font-weight: bold;
+            margin-left: 8px;
+            white-space: nowrap;
+        }
+
+        /* COMPLETED */
+
+        .completed {
+            text-decoration: line-through;
+            text-decoration-color: #111;
+            text-decoration-thickness: 3px;
+            opacity: 0.45;
+        }
+
+        /* FOOTER */
+
+        footer {
+            margin-top: 35px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 600px) {
+
+            body {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+
+            .next-test {
+                width: 100%;
+                padding: 25px 15px;
+            }
+
+            .schedule {
+                width: 100%;
+                padding: 20px;
+            }
+
+            #next-exam {
+                font-size: 25px;
+            }
+
+            #countdown {
+                font-size: 25px;
+            }
+
+            li {
+                font-size: 16px;
+            }
+
+        }
+
+    </style>
 
 </head>
 
+
 <body>
 
-```
-<h1>Wuss Guud Fam 👋</h1>
+    <h1>Wuss Guud Fam 👋</h1>
 
-<p>Welcome to Tyler's final exam schedule.</p>
-
-
-<!-- NEXT EXAM -->
-
-<div class="next-test">
-
-    <h2 id="next-title">⏰ Next Exam</h2>
-
-    <div id="next-exam">
-        Loading...
-    </div>
-
-    <div id="next-date">
-        Loading...
-    </div>
-
-    <div id="countdown">
-        Loading countdown...
-    </div>
-
-</div>
+    <p>Welcome to Tyler's final exam schedule.</p>
 
 
-<!-- EXAM SCHEDULE -->
+    <!-- NEXT EXAM -->
 
-<div class="schedule">
+    <div class="next-test">
 
-    <h2>📚 Final Exam Schedule</h2>
+        <h2 id="next-title">⏰ Next Exam</h2>
 
+        <div id="next-exam">
+            Loading...
+        </div>
 
-    <!-- WEEK 1 -->
+        <div id="next-date">
+            Loading...
+        </div>
 
-    <div class="week">
-
-        <h3 class="week-title">
-            Week 1 — 15 to 16 October
-        </h3>
-
-        <ul>
-
-            <li data-exam="2026-10-15T09:00:00" data-duration="3">
-                English HL Paper 3 -
-                <time datetime="2026-10-15T09:00">
-                    15 Oct 2026 at 9am
-                </time>
-                <span class="duration">• 3 hours</span>
-            </li>
-
-            <li data-exam="2026-10-16T09:00:00" data-duration="3">
-                Physical Sciences Paper 1 -
-                <time datetime="2026-10-16T09:00">
-                    16 Oct 2026 at 9am
-                </time>
-                <span class="duration">• 3 hours</span>
-            </li>
-
-        </ul>
+        <div id="countdown">
+            Loading countdown...
+        </div>
 
     </div>
 
 
-    <!-- WEEK 2 -->
+    <!-- EXAM SCHEDULE -->
 
-    <div class="week">
+    <div class="schedule">
 
-        <h3 class="week-title">
-            Week 2 — 19 October
-        </h3>
+        <h2>📚 Final Exam Schedule</h2>
 
-        <ul>
 
-            <li data-exam="2026-10-19T09:00:00" data-duration="2.5">
-                Afrikaans FAL Paper 3 -
-                <time datetime="2026-10-19T09:00">
-                    19 Oct 2026 at 9am
-                </time>
-                <span class="duration">• 2.5 hours</span>
-            </li>
+        <!-- WEEK 1 -->
 
-            <li data-exam="2026-10-19T14:00:00" data-duration="3">
-                Physical Sciences Paper 2 -
-                <time datetime="2026-10-19T14:00">
-                    19 Oct 2026 at 2pm
-                </time>
-                <span class="duration">• 3 hours</span>
-            </li>
+        <div class="week">
 
-        </ul>
+            <h3 class="week-title">
+                Week 1 — 12 to 16 October
+            </h3>
+
+            <ul>
+
+                <li data-exam="2026-10-15T09:00:00" data-duration="3">
+                    English HL Paper 3 -
+                    <time datetime="2026-10-15T09:00">
+                        Thursday, 15 Oct 2026 at 9am
+                    </time>
+                    <span class="duration">• 3 hours</span>
+                </li>
+
+                <li data-exam="2026-10-16T09:00:00" data-duration="3">
+                    Physical Sciences Paper 1 -
+                    <time datetime="2026-10-16T09:00">
+                        Friday, 16 Oct 2026 at 9am
+                    </time>
+                    <span class="duration">• 3 hours</span>
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- WEEK 2 -->
+
+        <div class="week">
+
+            <h3 class="week-title">
+                Week 2 — 19 to 23 October
+            </h3>
+
+            <ul>
+
+                <li data-exam="2026-10-19T09:00:00" data-duration="2.5">
+                    Afrikaans FAL Paper 3 -
+                    <time datetime="2026-10-19T09:00">
+                        Monday, 19 Oct 2026 at 9am
+                    </time>
+                    <span class="duration">• 2.5 hours</span>
+                </li>
+
+                <li data-exam="2026-10-19T14:00:00" data-duration="3">
+                    Physical Sciences Paper 2 -
+                    <time datetime="2026-10-19T14:00">
+                        Monday, 19 Oct 2026 at 2pm
+                    </time>
+                    <span class="duration">• 3 hours</span>
+                </li>
+
+                <li data-exam="2026-10-23T09:00:00" data-duration="3">
+                    Mathematics Paper 1 -
+                    <time datetime="2026-10-23T09:00">
+                        Friday, 23 Oct 2026 at 9am
+                    </time>
+                    <span class="duration">• 3 hours</span>
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- WEEK 3 -->
+
+        <div class="week">
+
+            <h3 class="week-title">
+                Week 3 — 26 to 30 October
+            </h3>
+
+            <ul>
+
+                <li data-exam="2026-10-26T09:00:00" data-duration="3">
+                    Mathematics Paper 2 -
+                    <time datetime="2026-10-26T09:00">
+                        Monday, 26 Oct 2026 at 9am
+                    </time>
+                    <span class="duration">• 3 hours</span>
+                </li>
+
+                <li data-exam="2026-10-29T14:00:00" data-duration="2.5">
+                    English HL Paper 2 -
+                    <time datetime="2026-10-29T14:00">
+                        Thursday, 29 Oct 2026 at 2pm
+                    </time>
+                    <span class="duration">• 2.5 hours</span>
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- WEEK 4 -->
+
+        <div class="week">
+
+            <h3 class="week-title">
+                Week 4 — 2 to 6 November
+            </h3>
+
+            <ul>
+
+                <li data-exam="2026-11-06T09:00:00" data-duration="2.5">
+                    Afrikaans FAL Paper 2 -
+                    <time datetime="2026-11-06T09:00">
+                        Friday, 6 Nov 2026 at 9am
+                    </time>
+                    <span class="duration">• 2.5 hours</span>
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- WEEK 5 -->
+
+        <div class="week">
+
+            <h3 class="week-title">
+                Week 5 — 9 to 13 November
+            </h3>
+
+            <ul>
+
+                <li data-exam="2026-11-10T09:00:00" data-duration="2">
+                    Afrikaans FAL Paper 1 -
+                    <time datetime="2026-11-10T09:00">
+                        Tuesday, 10 Nov 2026 at 9am
+                    </time>
+                    <span class="duration">• 2 hours</span>
+                </li>
+
+                <li data-exam="2026-11-12T09:00:00" data-duration="3">
+                    History Paper 1 -
+                    <time datetime="2026-11-12T09:00">
+                        Thursday, 12 Nov 2026 at 9am
+                    </time>
+                    <span class="duration">• 3 hours</span>
+                </li>
+
+                <li data-exam="2026-11-12T14:00:00" data-duration="2">
+                    English HL Paper 1 -
+                    <time datetime="2026-11-12T14:00">
+                        Thursday, 12 Nov 2026 at 2pm
+                    </time>
+                    <span class="duration">• 2 hours</span>
+                </li>
+
+                <li data-exam="2026-11-13T09:00:00" data-duration="2.5">
+                    Life Sciences Paper 1 -
+                    <time datetime="2026-11-13T09:00">
+                        Friday, 13 Nov 2026 at 9am
+                    </time>
+                    <span class="duration">• 2.5 hours</span>
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- WEEK 6 -->
+
+        <div class="week">
+
+            <h3 class="week-title">
+                Week 6 — 16 to 20 November
+            </h3>
+
+            <ul>
+
+                <li data-exam="2026-11-16T09:00:00" data-duration="2.5">
+                    Life Sciences Paper 2 -
+                    <time datetime="2026-11-16T09:00">
+                        Monday, 16 Nov 2026 at 9am
+                    </time>
+                    <span class="duration">• 2.5 hours</span>
+                </li>
+
+                <li data-exam="2026-11-20T09:00:00" data-duration="3">
+                    History Paper 2 -
+                    <time datetime="2026-11-20T09:00">
+                        Friday, 20 Nov 2026 at 9am
+                    </time>
+                    <span class="duration">• 3 hours</span>
+                </li>
+
+            </ul>
+
+        </div>
 
     </div>
 
 
-    <!-- WEEK 3 -->
+    <footer>
+        Made by Tyler 💻
+    </footer>
 
-    <div class="week">
-
-        <h3 class="week-title">
-            Week 3 — 23 to 29 October
-        </h3>
-
-        <ul>
-
-            <li data-exam="2026-10-23T09:00:00" data-duration="3">
-                Mathematics Paper 1 -
-                <time datetime="2026-10-23T09:00">
-                    23 Oct 2026 at 9am
-                </time>
-                <span class="duration">• 3 hours</span>
-            </li>
-
-            <li data-exam="2026-10-26T09:00:00" data-duration="3">
-                Mathematics Paper 2 -
-                <time datetime="2026-10-26T09:00">
-                    26 Oct 2026 at 9am
-                </time>
-                <span class="duration">• 3 hours</span>
-            </li>
-
-            <li data-exam="2026-10-29T14:00:00" data-duration="2.5">
-                English HL Paper 2 -
-                <time datetime="2026-10-29T14:00">
-                    29 Oct 2026 at 2pm
-                </time>
-                <span class="duration">• 2.5 hours</span>
-            </li>
-
-        </ul>
-
-    </div>
-
-
-    <!-- WEEK 4 -->
-
-    <div class="week">
-
-        <h3 class="week-title">
-            Week 4 — 6 to 13 November
-        </h3>
-
-        <ul>
-
-            <li data-exam="2026-11-06T09:00:00" data-duration="2.5">
-                Afrikaans FAL Paper 2 -
-                <time datetime="2026-11-06T09:00">
-                    6 Nov 2026 at 9am
-                </time>
-                <span class="duration">• 2.5 hours</span>
-            </li>
-
-            <li data-exam="2026-11-12T09:00:00" data-duration="3">
-                History Paper 1 -
-                <time datetime="2026-11-12T09:00">
-                    12 Nov 2026 at 9am
-                </time>
-                <span class="duration">• 3 hours</span>
-            </li>
-
-            <li data-exam="2026-11-12T14:00:00" data-duration="2">
-                English HL Paper 1 -
-                <time datetime="2026-11-12T14:00">
-                    12 Nov 2026 at 2pm
-                </time>
-                <span class="duration">• 2 hours</span>
-            </li>
-
-            <li data-exam="2026-11-13T09:00:00" data-duration="2.5">
-                Life Sciences Paper 1 -
-                <time datetime="2026-11-13T09:00">
-                    13 Nov 2026 at 9am
-                </time>
-                <span class="duration">• 2.5 hours</span>
-            </li>
-
-        </ul>
-
-    </div>
-
-
-    <!-- WEEK 5 -->
-
-    <div class="week">
-
-        <h3 class="week-title">
-            Week 5 — 16 to 20 November
-        </h3>
-
-        <ul>
-
-            <li data-exam="2026-11-16T09:00:00" data-duration="2.5">
-                Life Sciences Paper 2 -
-                <time datetime="2026-11-16T09:00">
-                    16 Nov 2026 at 9am
-                </time>
-                <span class="duration">• 2.5 hours</span>
-            </li>
-
-            <li data-exam="2026-11-20T09:00:00" data-duration="3">
-                History Paper 2 -
-                <time datetime="2026-11-20T09:00">
-                    20 Nov 2026 at 9am
-                </time>
-                <span class="duration">• 3 hours</span>
-            </li>
-
-        </ul>
-
-    </div>
-
-</div>
-
-
-<footer>
-    Made by Tyler 💻
-</footer>
-```
 
 <script>
 
@@ -469,6 +489,12 @@
         },
 
         {
+            name: "Afrikaans FAL Paper 1",
+            date: "2026-11-10T09:00:00",
+            duration: 2
+        },
+
+        {
             name: "History Paper 1",
             date: "2026-11-12T09:00:00",
             duration: 3
@@ -522,8 +548,6 @@
             const examEndTime =
                 examTime + (duration * 60 * 60 * 1000);
 
-
-            // Find existing status
 
             let status =
                 examElement.querySelector(".status");
@@ -832,6 +856,7 @@
     setInterval(updateCountdown, 1000);
 
 </script>
+
 
 </body>
 
